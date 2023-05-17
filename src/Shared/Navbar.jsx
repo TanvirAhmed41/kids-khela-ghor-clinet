@@ -32,7 +32,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className="btn btn-outline btn-warning">appointment</button>
+                <button className="btn btn-outline btn-warning">LogIn</button>
             </div>
         </div>
     );
