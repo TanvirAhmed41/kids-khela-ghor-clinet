@@ -2,7 +2,7 @@ const Gallery = () => {
   return (
     <div>
         <h1 className="text-center font-bold text-5xl m-5">Gallery</h1>
-        <p className="text-center">Step into our captivating animal gallery and immerse yourself in a visual feast of adorable toy creatures. Explore the diverse species on display, marvel at their beauty, and ignite your imagination with every click.</p>
+        <p className="w-3/4 text-center mx-auto">Step into our captivating animal gallery and immerse yourself in a visual feast of adorable toy creatures. Explore the diverse species on display, marvel at their beauty, and ignite your imagination with every click.</p>
       <div className="card  grid grid-cols-1 md:grid-cols-3 bg-base-100 shadow-xl mb-5">
         <figure className="px-10 pt-10 w-96">
           <img

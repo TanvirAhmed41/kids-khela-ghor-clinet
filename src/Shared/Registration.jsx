@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import { Link } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
@@ -56,6 +57,7 @@ const Registration = () => {
               </div>
               <div className="card flex-shrink-0 max-w-sm shadow-2xl bg-pink-400 w-1/2">
                 <div className="card-body">
+                  <h1 className="text-center font-bold text-4xl text-black">REGISTRATION</h1>
                   <div className="form-control">
                     <label className="label">
                       <span className="label-text font-bold text-black text-xl">
@@ -107,15 +109,9 @@ const Registration = () => {
                       placeholder="photo url"
                       className="input input-bordered"
                     />
-                    <label className="label">
-                      <a
-                        href="#"
-                        className="label-text-alt link link-hover  font-semibold text-black text-xl"
-                      >
-                        Forgot password?
-                      </a>
-                    </label>
+                   
                   </div>
+                  <p className='text-center text-xl'><small className="text-lime-800 font-semibold">Already Have an Account? <Link to='/login' className='text-red-600  '>LogIn Please</Link> </small></p>
                   <div className="form-control mt-6">
                     <input
                       type="submit"
@@ -124,9 +120,13 @@ const Registration = () => {
                     ></input>
                   </div>
                 </div>
+                
               </div>
+              
             </div>
+           
           </div>
+          
         </form>
         <p className="text-danger">{error}</p>
       </div>

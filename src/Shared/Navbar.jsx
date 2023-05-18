@@ -34,7 +34,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link to='/' className="btn  btn-ghost normal-case text-xl">
-                    <h2 className="text-3xl">KIDS KHELA GHOR</h2>
+                    <h2 className="text-3xl">KHELA GHOR</h2>
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
