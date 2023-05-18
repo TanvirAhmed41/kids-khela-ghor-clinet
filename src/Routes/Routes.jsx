@@ -5,6 +5,7 @@ import AllToys from "../Home/AllToys/AllToys";
 import LogIn from "../Shared/LogIn";
 import Registration from "../Shared/Registration";
 import ErrorPage from "../Shared/ErrorPage";
+import Blog from "../Shared/Blog";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
         {
           path: 'signup',
           element:<Registration></Registration>
+        },
+        {
+          path: 'blog',
+          element:<Blog></Blog>
         }
       ]
       

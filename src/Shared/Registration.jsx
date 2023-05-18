@@ -1,98 +1,134 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 
 const Registration = () => {
-    const {handleSignUp } = useContext(AuthContext)
-    const createSignUp = (event) =>{
-        event.preventDefault();
+  const { handleSignUp } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const createSignUp = (event) => {
+    event.preventDefault();
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
     const photo = form.photo.value;
-    console.log(name,email,password,photo);
-    handleSignUp(email, password)
-    .then((result) => {
-      const loggedUser = result.user;
-      console.log(loggedUser);
-     
-      form.reset();
-    })
-    .then((error) => {
-      console.error(error);
-    });
+    console.log(name, email, password, photo);
+
+    setError("");
+    if (password.length < 6) {
+      setError("password must be 6 characters or longer");
+      return;
     }
-   
-    
-    return (
+
+    handleSignUp(email, password)
+      .then((result) => {
+        const createUser = result.user;
+        console.log(createUser);
+        handleUpdate(createUser, name, photo);
+        form.reset();
+        navigate("/")
+        form.reset();
+      })
+      .then((error) => {
+        console.error(error);
+      });
+  };
+  const handleUpdate = (createUser, name, photoUrl) => {
+    updateProfile(createUser, { displayName: name, photoURL: photoUrl })
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
+  return (
+    <div className="container ">
+        <div  className="login-form mx-auto rounded-3 shadow-lg">
         <form onSubmit={createSignUp}>
-             <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero min-h-screen bg-white">
+        <div className="hero-content flex-col lg:flex-row-reverse gap-10">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Registration now!</h1>
+            <h1 className="text-5xl font-bold text-black">Registration now!</h1>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-pink-400">
             <div className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Name</span>
+                  <span className="label-text font-bold text-black text-xl">
+                    Name
+                  </span>
                 </label>
                 <input
                   type="name"
-                  name ="name"
-                  placeholder="name"
+                  name="name"
+                  placeholder="Please Enter Your Name"
                   className="input input-bordered"
                 />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text  font-bold text-black text-xl">
+                    Email
+                  </span>
                 </label>
                 <input
                   type="email"
-                  name ="email"
-                  placeholder="email"
+                  name="email"
+                  placeholder="Please Enter Your Email"
                   className="input input-bordered"
                 />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text  font-bold text-black text-xl">
+                    Password
+                  </span>
                 </label>
                 <input
-                  type="password"
-                    name="password"
-                  placeholder="password"
+                  type="password "
+                  name="password"
+                  placeholder="Please Enter Your Password"
+                  className="input input-bordered"
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text  font-bold text-black text-xl">
+                    Photo Url
+                  </span>
+                </label>
+                <input
+                  type="photo"
+                  name="photo"
+                  placeholder="photo url"
                   className="input input-bordered"
                 />
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
+                  <a
+                    href="#"
+                    className="label-text-alt link link-hover  font-semibold text-black text-xl"
+                  >
                     Forgot password?
                   </a>
                 </label>
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Photo Url</span>
-                </label>
-                <input
-                  type="photo"
-                    name="photo"
-                  placeholder="photo url"
-                  className="input input-bordered"
-                />
-        
-              </div>
               <div className="form-control mt-6">
-                <input type="submit" value="Sign Up" className="btn btn-primary"></input>
+                <input
+                  type="submit"
+                  value="Sign Up"
+                  className="btn btn-primary"
+                ></input>
               </div>
             </div>
           </div>
         </div>
       </div>
-        </form>
-    );
+    </form>
+      <p className="text-danger">{error}</p>
+        </div>
+    </div>
+    
+  );
 };
 
 export default Registration;

@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
 
     const navItems = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/about'>About</Link></li>
+        <li><Link to='/' className="btn btn-outline btn-accent mr-3">Home</Link></li>
+        <li><Link to='/about'  className="btn btn-outline btn-accent mr-3">About</Link></li>
+        <li><Link to='/blog'  className="btn btn-outline btn-accent">Blog</Link></li>
         {/* {
             user ? <li onClick={handleLogOut}><Link>Logout</Link></li> :
                 <li><Link to='/login'>Login</Link></li>
@@ -12,7 +13,7 @@ const Navbar = () => {
 
     </>
     return (
-        <div className="navbar bg-gray-600 h-24 mb-4">
+        <div className="navbar bg-green-800 h-24">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -22,7 +23,7 @@ const Navbar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl">
+                <Link to='/' className="btn  btn-ghost normal-case text-xl">
                     <h2 className="text-3xl">KIDS KHELA GHOR</h2>
                 </Link>
             </div>
