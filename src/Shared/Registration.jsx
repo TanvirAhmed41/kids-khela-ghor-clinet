@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
   const { handleSignUp } = useContext(AuthContext);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [error, setError] = useState("");
+
   const createSignUp = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -28,7 +29,7 @@ const Registration = () => {
         console.log(createUser);
         handleUpdate(createUser, name, photo);
         form.reset();
-        navigate("/");
+        // navigate("/");
         form.reset();
       })
       .then((error) => {
