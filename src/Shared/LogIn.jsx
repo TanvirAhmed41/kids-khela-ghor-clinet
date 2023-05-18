@@ -17,7 +17,7 @@ const LogIn = () => {
         console.log(loggedUser);
         form.reset();
       })
-      .then((error) => {
+      .catch((error) => {
         console.error(error);
       });
   };
@@ -26,9 +26,9 @@ const LogIn = () => {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Login now!</h1>
+            <img className="h-96 border rounded-lg" src="https://static.vecteezy.com/system/resources/previews/005/879/539/original/cloud-computing-modern-flat-concept-for-web-banner-design-man-enters-password-and-login-to-access-cloud-storage-for-uploading-and-processing-files-illustration-with-isolated-people-scene-free-vector.jpg" alt="" />
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl h-96 bg-white">
             <div className="card-body">
               <div className="form-control">
                 <label className="label">

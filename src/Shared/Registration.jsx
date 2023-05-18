@@ -3,7 +3,6 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
-
 const Registration = () => {
   const { handleSignUp } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -29,7 +28,7 @@ const Registration = () => {
         console.log(createUser);
         handleUpdate(createUser, name, photo);
         form.reset();
-        navigate("/")
+        navigate("/");
         form.reset();
       })
       .then((error) => {
@@ -42,92 +41,95 @@ const Registration = () => {
       .catch((error) => console.error(error));
   };
   return (
-    <div className="container ">
-        <div  className="login-form mx-auto rounded-3 shadow-lg">
+    <div className="container">
+      <div className="login-form mx-auto rounded-3 shadow-lg">
         <form onSubmit={createSignUp}>
-      <div className="hero min-h-screen bg-white">
-        <div className="hero-content flex-col lg:flex-row-reverse gap-10">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold text-black">Registration now!</h1>
-          </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-pink-400">
-            <div className="card-body">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text font-bold text-black text-xl">
-                    Name
-                  </span>
-                </label>
-                <input
-                  type="name"
-                  name="name"
-                  placeholder="Please Enter Your Name"
-                  className="input input-bordered"
+          <div className="hero min-h-screen bg-white">
+            <div className="hero-content flex-col lg:flex-row-reverse gap-10">
+              <div className="text-center lg:text-left w-1/2">
+                <img
+                  className=""
+                  src="https://img.freepik.com/premium-vector/create-new-account-concept-illustration_269560-19.jpg?w=2000"
+                  alt=""
                 />
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text  font-bold text-black text-xl">
-                    Email
-                  </span>
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Please Enter Your Email"
-                  className="input input-bordered"
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text  font-bold text-black text-xl">
-                    Password
-                  </span>
-                </label>
-                <input
-                  type="password "
-                  name="password"
-                  placeholder="Please Enter Your Password"
-                  className="input input-bordered"
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text  font-bold text-black text-xl">
-                    Photo Url
-                  </span>
-                </label>
-                <input
-                  type="photo"
-                  name="photo"
-                  placeholder="photo url"
-                  className="input input-bordered"
-                />
-                <label className="label">
-                  <a
-                    href="#"
-                    className="label-text-alt link link-hover  font-semibold text-black text-xl"
-                  >
-                    Forgot password?
-                  </a>
-                </label>
-              </div>
-              <div className="form-control mt-6">
-                <input
-                  type="submit"
-                  value="Sign Up"
-                  className="btn btn-primary"
-                ></input>
+              <div className="card flex-shrink-0 max-w-sm shadow-2xl bg-pink-400 w-1/2">
+                <div className="card-body">
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text font-bold text-black text-xl">
+                        Name
+                      </span>
+                    </label>
+                    <input
+                      type="name"
+                      name="name"
+                      placeholder="Please Enter Your Name"
+                      className="input input-bordered"
+                    />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text  font-bold text-black text-xl">
+                        Email
+                      </span>
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Please Enter Your Email"
+                      className="input input-bordered"
+                    />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text  font-bold text-black text-xl">
+                        Password
+                      </span>
+                    </label>
+                    <input
+                      type="password"
+                      name="password"
+                      placeholder="Please Enter Your Password"
+                      className="input input-bordered"
+                    />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text  font-bold text-black text-xl">
+                        Photo Url
+                      </span>
+                    </label>
+                    <input
+                      type="photo"
+                      name="photo"
+                      placeholder="photo url"
+                      className="input input-bordered"
+                    />
+                    <label className="label">
+                      <a
+                        href="#"
+                        className="label-text-alt link link-hover  font-semibold text-black text-xl"
+                      >
+                        Forgot password?
+                      </a>
+                    </label>
+                  </div>
+                  <div className="form-control mt-6">
+                    <input
+                      type="submit"
+                      value="Sign Up"
+                      className="btn btn-primary"
+                    ></input>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </form>
+        <p className="text-danger">{error}</p>
       </div>
-    </form>
-      <p className="text-danger">{error}</p>
-        </div>
     </div>
-    
   );
 };
 
