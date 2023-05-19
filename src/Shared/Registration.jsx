@@ -35,6 +35,7 @@ const Registration = () => {
       })
       .then((error) => {
         console.error(error);
+        setError(error.message)
       });
   };
   const handleUpdate = (createUser, name, photoUrl) => {

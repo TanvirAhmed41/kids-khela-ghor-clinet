@@ -20,7 +20,11 @@ const AuthProvider = ({ children }) => {
 
     const logOut = ()=>{
         return signOut(auth) ;
-    }
+    };
+    const googleLogin = (provider) => {
+        return signInWithPopup(auth, provider);
+      };
+
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -35,6 +39,7 @@ const AuthProvider = ({ children }) => {
     const authInfo ={
         handleLogin,
         handleSignUp,
+        googleLogin,
         logOut,
         user,
         loading
