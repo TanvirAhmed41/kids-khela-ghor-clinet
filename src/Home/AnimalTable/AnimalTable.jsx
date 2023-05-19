@@ -16,7 +16,7 @@ const AnimalTable = ({ toy }) => {
       <th>{sellerName}</th>
       <th>{subCategory}</th>
       <th>{price}</th>
-      <th><button>View Details</button></th>
+      <th><button className="btn btn-primary">View Details</button></th>
     </tr>
   );
 };

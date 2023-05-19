@@ -15,20 +15,20 @@ const AllToys = () => {
     <div>
       <div className="overflow-x-auto">
         <div className="flex justify-center items-center">
-            <input type="search" placeholder="search" className="w-1/2 p-3 my-5 rounded " name="" id="" />
+            <input type="search" placeholder="search" className="w-1/2 p-3 my-5 rounded bg-white " name="" id="" />
             <button className="btn btn-primary">Search</button>
         </div>
         <table className="table table-compact w-full">
-          <thead>
-            <tr>
-              <th>Name</th>
+          <thead >
+            <tr className="py-5">
+              <th className="py-5">Name</th>
               <th>Seller </th>
               <th>Sub Category</th>
               <th>Price</th>
               <th>Details</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="py-5">
                 {
                     animalToys.map((toy) =><AnimalTable key={toy._id} toy={toy}></AnimalTable>)
                 }
