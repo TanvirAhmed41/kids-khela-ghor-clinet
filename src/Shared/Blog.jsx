@@ -1,6 +1,13 @@
+import { Helmet } from "react-helmet";
+
 const Blog = () => {
   return (
     <div className="py-10">
+      <Helmet>
+        <title>
+          Animal Blog   
+        </title>
+      </Helmet>
       <div className="p-5 mb-5">
         <p className="text-xl font-bold mb-3">
           Q1:What is an access token and refresh token? How do they work and
