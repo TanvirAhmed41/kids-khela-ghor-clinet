@@ -41,9 +41,10 @@ const AddAToy = () => {
         
     }
     return (
-        <div className="py-5">
-          <form onSubmit={handlePost}  className="grid grid-cols-2 gap-5 ml-32">
-                <input className="p-3 w-2/3 bg-green-200 rounded-md text-black font-semibold" type="text" name="toyName" placeholder="Toy Name" />
+        <div className="py-5 bg-slate-50">
+            <h1 className="text-center text-5xl text-slate-700 p-5"><span className="lg:mr-6">A D D</span><span className="lg:mr-6">T O Y</span>N O W</h1>
+          <form onSubmit={handlePost}  className="grid grid-cols-2 gap-5 ml-32 py-5">
+                <input className="p-3  w-2/3 bg-green-200 rounded-md text-black font-semibold" type="text" name="toyName" placeholder="Toy Name" />
                 <input className="p-3 w-2/3  bg-green-200 rounded-md text-black font-semibold" type="url" name="toyPhoto" placeholder="Toy Picture" />
                 <input className="p-3 w-2/3  bg-green-200 rounded-md text-black font-semibold" type="text" value={user?.displayName}name="name" placeholder="Seller Name" />
                 <input className="p-3 w-2/3  bg-green-200 rounded-md text-black font-semibold" type="email" value={user?.email} name="email" placeholder="Seller Email" />

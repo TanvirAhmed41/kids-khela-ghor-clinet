@@ -2,13 +2,13 @@ import { Helmet } from "react-helmet";
 
 const Blog = () => {
   return (
-    <div className="py-10">
+    <div className="py-10 bg-white">
       <Helmet>
         <title>
           Animal Blog   
         </title>
       </Helmet>
-      <div className="p-5 mb-5">
+      <div className="p-5 mb-5 text-black">
         <p className="text-xl font-bold mb-3">
           Q1:What is an access token and refresh token? How do they work and
           where should we store them on the client-side?
@@ -29,7 +29,7 @@ const Blog = () => {
           authentication and authorization.
         </p>
       </div>
-      <div className="p-5 mb-5">
+      <div className="p-5 mb-5 text-black">
         <p className="text-xl font-bold mb-3">
           Q2:Compare SQL and NoSQL databases?
         </p>
@@ -60,7 +60,7 @@ const Blog = () => {
           solution.
         </p>
       </div>
-      <div className="p-5 mb-5">
+      <div className="p-5 mb-5 text-black">
         <p className="text-xl font-bold mb-3">
           Q3:What is express js? What is Nest JS
         </p>
@@ -82,7 +82,7 @@ const Blog = () => {
           complex and large-scale projects.
         </p>
       </div>
-      <div className="p-5 mb-5">
+      <div className="p-5 mb-5 text-black">
         <p className="text-xl font-bold mb-3">
           Q4:What is MongoDB aggregate and how does it work?
         </p>
