@@ -36,10 +36,11 @@ const MyToys = () => {
 
     return (
         <div>
-            <table className="table table-compact w-full">
+            <table className="table table-compact w-full ">
           <thead >
-            <tr className="py-5">
-              <th className="py-5">Name</th>
+            <tr>
+              <th className="p-5 text-center">No</th>
+              <th>Name</th>
               <th>Seller </th>
               <th>Sub Category</th>
               <th>Price</th>

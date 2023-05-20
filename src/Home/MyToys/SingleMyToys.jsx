@@ -12,7 +12,7 @@ const SingleMyToys = ({ toy, handleDelete }) => {
   } = toy;
   return (
     <tr>
-      <th>
+      <th className="text-center ps-5">
         <label>
           <button
             onClick={() => handleDelete(_id)}
@@ -35,13 +35,18 @@ const SingleMyToys = ({ toy, handleDelete }) => {
           </button>
         </label>
       </th>
-      <th>{name}</th>
+      <th>{name}</th> 
       <th>{sellerName}</th>
       <th>{subCategory}</th>
       <th>{price}</th>
-      <th>
-        <button className="btn btn-primary">View Details</button>
+     <div  className="flex justify-center items-center w-1/2">
+     <th>
+        <button className="btn btn-success w-22">Edit</button>
       </th>
+      <th>
+        <button className="btn btn-success w-22">View Details</button>
+      </th>
+     </div>
     </tr>
   );
 };

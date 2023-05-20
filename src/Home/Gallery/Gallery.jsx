@@ -1,9 +1,11 @@
 const Gallery = () => {
   return (
-    <div>
-        <h1 className="text-center font-bold text-5xl m-5">Gallery</h1>
-        <p className="w-3/4 text-center mx-auto">Step into our captivating animal gallery and immerse yourself in a visual feast of adorable toy creatures. Explore the diverse species on display, marvel at their beauty, and ignite your imagination with every click.</p>
-      <div className="card  grid grid-cols-1 md:grid-cols-3 bg-base-100 shadow-xl mb-5">
+    <div className=" bg-red-200">
+        <div className=" mb-5">
+        <h1 className="text-center font-bold text-black text-5xl py-7 ">G A L L E R Y</h1>
+        <p className="w-3/4 text-center mx-auto text-black">Step into our captivating animal gallery and immerse yourself in a visual feast of adorable toy creatures. Explore the diverse species on display, marvel at their beauty, and ignite your imagination with every click.</p>
+        </div>
+      <div className="card  grid grid-cols-1 md:grid-cols-3 bg-red-200 px-5 shadow-xl mb-5">
         <figure className="px-10 pt-10 w-96">
           <img
             src="https://static-01.daraz.com.bd/p/ecd847a662c012e6bcbb546700a9a4f7.jpg"

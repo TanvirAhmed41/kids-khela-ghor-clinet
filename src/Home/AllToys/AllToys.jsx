@@ -37,8 +37,8 @@ const AllToys = () => {
           </button>
         </div>
         <table className="table table-compact w-full">
-          <thead>
-            <tr className="py-5">
+          <thead >
+            <tr className="container py-10">
               <th className="py-5">Name</th>
               <th>Seller </th>
               <th>Sub Category</th>
