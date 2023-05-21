@@ -3,11 +3,15 @@ import { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import CategoryCard from "./CategoryCard";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Categories = () => {
     const [data,setData] =useState([]);
     const [category,setCategory] = useState("WildToys")
-
+    useEffect(() => {
+        AOS.init();
+      }, []);
     useEffect(() => {
         fetch(`https://kids-khelaghor-server.vercel.app/categories?category=${category}`)
           .then((res) => res.json())
@@ -25,21 +29,21 @@ const Categories = () => {
         </TabList>
 
         <TabPanel>
-          <div className="grid lg:grid-cols-3">
+          <div  data-aos="zoom-in" className="grid lg:grid-cols-3">
             {
                 data.map((rc)=><CategoryCard animal={rc} key={rc._id}></CategoryCard>)
             }
           </div>
         </TabPanel>
         <TabPanel>
-        <div className="grid lg:grid-cols-3">
+        <div  data-aos="fade-right" className="grid lg:grid-cols-3">
             {
                 data.map((rc)=><CategoryCard animal={rc} key={rc._id}></CategoryCard>)
             }
           </div>
         </TabPanel>
         <TabPanel>
-        <div className="grid lg:grid-cols-3">
+        <div data-aos="fade-right" className="grid lg:grid-cols-3">
             {
                 data.map((rc)=><CategoryCard animal={rc} key={rc._id}></CategoryCard>)
             }

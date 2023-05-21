@@ -1,4 +1,10 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const ShopByAge = () => {
+    useEffect(() => {
+        AOS.init();
+      }, []);
   return (
     <div className=" bg-fuchsia-900 py-5 rounded-lg">
       <div className="p-10">
@@ -13,7 +19,7 @@ const ShopByAge = () => {
       </div>
       <div className="grid lg:grid-cols-3 gap-5 px-10">
         <div className="mb-10">
-        <img
+        <img data-aos="zoom-out-right"
           className="rounded-full w-full  "
           src="https://whiterabbit.axiomthemes.com/wp-content/uploads/2016/04/3-2-600x700.jpg"
           alt=""
@@ -21,7 +27,7 @@ const ShopByAge = () => {
         <p className="text-center text-2xl font-bold mt-5">8 TO 13  YEARS</p>
         </div>
         <div  className="mb-10">
-        <img
+        <img data-aos="zoom-out-left"
           className="rounded-full w-full"
           src="https://whiterabbit.axiomthemes.com/wp-content/uploads/2016/04/1-3-600x700.jpg"
           alt=""
@@ -29,7 +35,7 @@ const ShopByAge = () => {
         <p className="text-center text-2xl font-bold mt-5">5 TO 7 YEARS</p>
         </div>
         <div  className="mb-10">
-        <img
+        <img data-aos="zoom-out-down"
           className="rounded-full w-full"
           src="https://whiterabbit.axiomthemes.com/wp-content/uploads/2016/04/2-3-600x700.jpg"
           alt=""

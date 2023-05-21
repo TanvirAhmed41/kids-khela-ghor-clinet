@@ -1,4 +1,10 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const NewCollection = () => {
+    useEffect(() => {
+        AOS.init();
+      }, []);
   return (
     <div className="bg-white rounded-lg py-10">
       <div className="py-5">
@@ -15,7 +21,7 @@ const NewCollection = () => {
       <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-3 ">
       <div className="card w-full  shadow-xl">
         <figure>
-          <img className="w-96"
+          <img  data-aos="zoom-in" className="w-96"
             src="https://cdn.shopify.com/s/files/1/2281/5369/products/lion-128823_700x700.jpg?v=1610741722"
             alt="Shoes"
           />
@@ -31,7 +37,7 @@ const NewCollection = () => {
       </div>
       <div className="card   shadow-xl">
         <figure>
-          <img className=""
+          <img  data-aos="flip-left" className=""
             src="https://cdn.shopify.com/s/files/1/2281/5369/products/gray-wolf-821656_700x700.jpg?v=1610734409"
             alt="Shoes"
           />
@@ -47,7 +53,7 @@ const NewCollection = () => {
       </div>
       <div className="card  shadow-xl">
         <figure>
-          <img className="w-96"
+          <img  data-aos="flip-right" className="w-96"
             src="https://cdn.shopify.com/s/files/1/2281/5369/products/hyena-305486_700x700.jpg?v=1610739314"
             alt="Shoes"
           />
