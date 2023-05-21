@@ -1,6 +1,6 @@
 const NewCollection = () => {
   return (
-    <div className="bg-white py-10">
+    <div className="bg-white rounded-lg py-10">
       <div className="py-5">
         <h1 className="text-center text-5xl font-bold mb-3 text-black">
           <span className="lg:mr-5">N E W</span> C O L L E C T I O N
@@ -13,7 +13,7 @@ const NewCollection = () => {
         </p>
       </div>
       <div className="grid lg:grid-cols-3 gap-3 p-10">
-      <div className="card  bg-base-100 shadow-xl">
+      <div className="card   shadow-xl">
         <figure>
           <img className="w-96"
             src="https://cdn.shopify.com/s/files/1/2281/5369/products/lion-128823_700x700.jpg?v=1610741722"
@@ -29,7 +29,7 @@ const NewCollection = () => {
           
         </div>
       </div>
-      <div className="card  bg-base-100 shadow-xl">
+      <div className="card   shadow-xl">
         <figure>
           <img className=""
             src="https://cdn.shopify.com/s/files/1/2281/5369/products/gray-wolf-821656_700x700.jpg?v=1610734409"
@@ -45,7 +45,7 @@ const NewCollection = () => {
           
         </div>
       </div>
-      <div className="card bg-base-100 shadow-xl">
+      <div className="card  shadow-xl">
         <figure>
           <img className="w-96"
             src="https://cdn.shopify.com/s/files/1/2281/5369/products/hyena-305486_700x700.jpg?v=1610739314"

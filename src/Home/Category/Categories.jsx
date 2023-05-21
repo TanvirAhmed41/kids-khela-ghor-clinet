@@ -25,21 +25,21 @@ const Categories = () => {
         </TabList>
 
         <TabPanel>
-          <div className="grid grid-cols-3">
+          <div className="grid lg:grid-cols-3">
             {
                 data.map((rc)=><CategoryCard animal={rc} key={rc._id}></CategoryCard>)
             }
           </div>
         </TabPanel>
         <TabPanel>
-        <div className="grid grid-cols-3">
+        <div className="grid lg:grid-cols-3">
             {
                 data.map((rc)=><CategoryCard animal={rc} key={rc._id}></CategoryCard>)
             }
           </div>
         </TabPanel>
         <TabPanel>
-        <div className="grid grid-cols-3">
+        <div className="grid lg:grid-cols-3">
             {
                 data.map((rc)=><CategoryCard animal={rc} key={rc._id}></CategoryCard>)
             }

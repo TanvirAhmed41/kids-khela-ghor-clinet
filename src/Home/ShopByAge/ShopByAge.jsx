@@ -1,12 +1,12 @@
 const ShopByAge = () => {
   return (
-    <div className=" bg-blue-800">
+    <div className=" bg-fuchsia-900 py-5 rounded-lg">
       <div className="p-10">
-        <h1 className="text-center font-bold mb-3 text-5xl">
+        <h1 className="text-center font-bold mb-3 text-5xl k">
           <span className="lg:mr-5">S H O P </span>
           <span className="lg:mr-5">BY</span> A G E
         </h1>
-        <p className="text-center mb-5">
+        <p className="text-center mb-5 font-semibold">
           WE HAVE PRODUCTS FOR ALL AGES. OUR ASSISTANTS ALWAYS HELP YOU TO DO
           RIGHT CHOICE.
         </p>
