@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const AnimalTable = ({ toy }) => {
   const {
     name,
@@ -16,7 +18,7 @@ const AnimalTable = ({ toy }) => {
       <th>{sellerName}</th>
       <th>{subCategory}</th>
       <th>{price}</th>
-      <th><button className="btn btn-primary">View Details</button></th>
+      <th><Link to={`/viewdetails/${_id}`}><button className="btn btn-primary">View Details</button></Link></th>
     </tr>
   );
 };

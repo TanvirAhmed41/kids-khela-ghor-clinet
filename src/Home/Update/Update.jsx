@@ -2,6 +2,8 @@ import { useLoaderData } from "react-router-dom";
 
 const Update = () => {
   const loadingData = useLoaderData();
+  const {_id} =loadingData
+
   console.log(loadingData);
   const handleUpdate = (event) => {
     event.preventDefault();
@@ -12,13 +14,14 @@ const Update = () => {
     const description = form.details.value;
 
     const toy = {
+
       price,
       quantity,
       description,
     };
     console.log(toy);
 
-    fetch("http://localhost:5000/updateToys", {
+    fetch(`http://localhost:5000/toys/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -28,12 +31,10 @@ const Update = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        // if (data.i) {
-        //   // Swal.fire(
-        //   //     'Successfully add a Toy'
-        //   //   )
-        //   alert("successful");
-        // }
+        if (data.modifiedCount>0) {
+            
+          alert("successful");
+        }
       });
   };
   return (
