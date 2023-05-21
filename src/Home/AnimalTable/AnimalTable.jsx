@@ -1,17 +1,13 @@
 import { Link } from "react-router-dom";
-
 const AnimalTable = ({ toy }) => {
   const {
-    name,
-    rating,
-    pictureURL,
-    description,
+    name, 
     price,
-    sellerEmail,
     sellerName,
     subCategory,
     _id,
   } = toy;
+
   return (
     <tr>
       <th>{name}</th>

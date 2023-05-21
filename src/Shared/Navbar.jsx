@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
-
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
@@ -25,16 +24,20 @@ const Navbar = () => {
           All Toys
         </Link>
       </li>
-      <li>
+      {
+        user && <li>
         <Link to="/myToys" className="btn btn-outline btn-accent mr-3">
           My Toys
         </Link>
       </li>
-      <li>
+      }
+      {
+        user && <li>
         <Link to="/addAToy" className="btn btn-outline btn-accent mr-3">
           Add A Toy
         </Link>
       </li>
+      }
       <li>
         <Link to="/blog" className="btn btn-outline btn-accent">
           Blogs
@@ -73,13 +76,17 @@ const Navbar = () => {
             {navItems}
           </ul>
         </div>
-        
-       <div className="flex justify-center items-center">
-       <img className="w-14 h-14 rounded-full bg-black" src="https://i.ibb.co/HV8zYhc/download.png" alt="hi" />
-       <Link to="/" className="btn  btn-ghost normal-case text-xl">
-          <h2 className="text-3xl">KHELA GHOR</h2>
-        </Link>
-       </div>
+
+        <div className="flex justify-center items-center px-10">
+          <img
+            className="w-14 h-14 rounded-full hidden lg:block bg-black"
+            src="https://i.ibb.co/HV8zYhc/download.png"
+            alt="hi"
+          />
+          <Link to="/" className="btn  btn-ghost normal-case text-xl">
+            <h2 className="text-3xl">KHELA GHOR</h2>
+          </Link>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
@@ -87,7 +94,8 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <div className="flex">
-            <img className="hidden lg:block"
+            <img
+              className="hidden lg:block"
               title={user.displayName}
               style={{
                 width: "40px",

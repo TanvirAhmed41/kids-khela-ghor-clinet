@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AnimalTable from "../AnimalTable/AnimalTable";
 
+
 const AllToys = () => {
   const [animalToys, setAnimalToys] = useState([]);
   const [searchAnimal, setSearchAnimal] = useState([]);
@@ -36,9 +37,9 @@ const AllToys = () => {
             Search
           </button>
         </div>
-        <table className="table table-compact w-full">
-          <thead >
-            <tr className="container py-10">
+        <table className="table w-full">
+          <thead className="">
+            <tr className=" py-10">
               <th className="py-5">Name</th>
               <th>Seller </th>
               <th>Sub Category</th>

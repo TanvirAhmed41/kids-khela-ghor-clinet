@@ -3,7 +3,8 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { GoogleAuthProvider } from "firebase/auth";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const LogIn = () => {
   const { handleLogin, googleLogin } = useContext(AuthContext);
   // console.log(handleLogin);
@@ -46,6 +47,9 @@ const LogIn = () => {
         console.log(error);
       });
   };
+  const diffToast =()=>{
+    toast("Login Successful!");
+}
   return (
     <form onSubmit={createLogin}>
       <div className="hero min-h-screen bg-base-200">
@@ -98,12 +102,12 @@ const LogIn = () => {
               </label>
            
               <div className="form-control mt-6">
-                <input
+                <button onClick={diffToast}
                   type="submit"
-                  value="login"
                   className="btn btn-primary"
-                ></input>
+                >Log in</button>
               </div>
+              <ToastContainer />
               <p className="mt-3 text-center font-semibold text-green-600">
                 <Link to="/signup"> Don't have an account? Sign Up </Link>
               </p>

@@ -5,15 +5,15 @@ const NewCollection = () => {
         <h1 className="text-center text-5xl font-bold mb-3 text-black">
           <span className="lg:mr-5">N E W</span> C O L L E C T I O N
         </h1>
-        <p className="text-center text-blue-500">
+        <p className="text-center text-blue-500 text-xl">
           Customer's favorite products this week. What's so special?{" "}
           <span className="text-red-600 text-2xl font-bold italic">
             Check it out!
           </span>
         </p>
       </div>
-      <div className="grid lg:grid-cols-3 gap-3 p-10">
-      <div className="card   shadow-xl">
+      <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-3 ">
+      <div className="card w-full  shadow-xl">
         <figure>
           <img className="w-96"
             src="https://cdn.shopify.com/s/files/1/2281/5369/products/lion-128823_700x700.jpg?v=1610741722"

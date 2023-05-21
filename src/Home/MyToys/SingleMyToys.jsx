@@ -1,23 +1,33 @@
 import { Link } from "react-router-dom";
-
 const SingleMyToys = ({ toy, handleDelete }) => {
   const {
+    pictureURL,
     name,
     price,
     sellerName,
+    sellerEmail,
     subCategory,
     _id,
   } = toy;
+
+ 
   return (
     <tr>
+      <th>
+        <img className="h-20 w-20 rounded-full" src={pictureURL} alt="" />
+        </th> 
       <th>{name}</th> 
       <th>{sellerName}</th>
+      <th>{sellerEmail}</th>
       <th>{subCategory}</th>
       <th>{price}</th>
      <div  className="flex justify-center items-center w-1/2">
      <th>
-        <Link to={`/toys/${_id}`}><button className="btn btn-success w-22">Edit</button></Link>
+        <Link to={`/toys/${_id}`}>
+          <button className="btn btn-success w-22">Edit</button>
+          </Link>
       </th>
+        
       <th>
       <label>
           <button

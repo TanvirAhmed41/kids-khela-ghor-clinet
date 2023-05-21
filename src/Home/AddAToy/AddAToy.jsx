@@ -1,8 +1,11 @@
-import { useContext } from "react";
+import { useContext} from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const AddAToy = () => {
+   
   const { user } = useContext(AuthContext);
+//   const [disabled,setDisabled]=useState(false)
   const handlePost = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -43,10 +46,15 @@ const AddAToy = () => {
           // Swal.fire(
           //     'Successfully add a Toy'
           //   )
-          alert("successful");
+        //   alert("successful");
+       
         }
+        
       });
   };
+  const diffToast =()=>{
+    toast("Added Successfully!");
+}
   return (
     <div className="py-5 bg-slate-50">
       <h1 className="text-center text-5xl text-slate-700 p-5">
@@ -110,11 +118,17 @@ const AddAToy = () => {
           name="details"
           placeholder="Detail description"
         />
-        <input
-          className="p-3 w-2/3  bg-pink-400 rounded-md text-black font-semibold"
-          type="submit"
-          value="Add Toy"
-        />
+       <div>
+       <button onClick={diffToast}
+        
+        className="p-3 w-2/3  bg-pink-400 rounded-md text-black font-semibold"
+        type="submit"
+        
+      >
+          Add Toy
+      </button>
+        <ToastContainer />
+       </div>
       </form>
     </div>
   );

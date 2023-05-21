@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Update = () => {
   const loadingData = useLoaderData();
   const {_id} =loadingData
@@ -31,12 +32,11 @@ const Update = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.modifiedCount>0) {
-            
-          alert("successful");
-        }
-      });
-  };
+    });
+};
+const diffToast =()=>{
+    toast("Update Done!");
+}
   return (
     <div className="bg-white py-5">
         <h1 className="text-center text-5xl text-slate-700 p-5">
@@ -48,6 +48,7 @@ const Update = () => {
           className="p-3 w-2/3  bg-green-200 rounded-md text-black font-semibold"
           type="number"
           name="price"
+          placeholder="price"
           defaultValue={loadingData.price}
         />
 
@@ -63,11 +64,16 @@ const Update = () => {
           name="details"
           defaultValue={loadingData.description}
         />
-        <input
+        <div>
+            <button onClick={diffToast}
+            
           className="p-3 w-2/3  bg-pink-400 rounded-md text-black font-semibold"
           type="submit"
-          value="Update Toy"
-        />
+          >
+            Update Toy
+            </button>
+        </div>
+        <ToastContainer />
       </form>
     </div>
   );
