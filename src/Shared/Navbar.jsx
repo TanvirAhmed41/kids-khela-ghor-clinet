@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
+
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
@@ -46,7 +47,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-green-800 h-24">
+    <div className="navbar bg-fuchsia-900 h-24">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -72,9 +73,13 @@ const Navbar = () => {
             {navItems}
           </ul>
         </div>
-        <Link to="/" className="btn  btn-ghost normal-case text-xl">
+        
+       <div className="flex justify-center items-center">
+       <img className="w-14 h-14 rounded-full bg-black" src="https://i.ibb.co/HV8zYhc/download.png" alt="hi" />
+       <Link to="/" className="btn  btn-ghost normal-case text-xl">
           <h2 className="text-3xl">KHELA GHOR</h2>
         </Link>
+       </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItems}</ul>

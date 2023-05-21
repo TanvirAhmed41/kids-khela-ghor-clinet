@@ -37,7 +37,11 @@ const Update = () => {
       });
   };
   return (
-    <div>
+    <div className="bg-white">
+        <h1 className="text-center text-5xl text-slate-700 p-5">
+        <span className="lg:mr-6">U P A D D</span>
+        <span className="lg:mr-6">T O Y</span>N O W
+      </h1>
       <form onSubmit={handleUpdate} className="grid grid-cols-2 gap-5 ml-32 py-5">
         <input
           className="p-3 w-2/3  bg-green-200 rounded-md text-black font-semibold"

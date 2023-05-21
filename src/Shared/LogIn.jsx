@@ -115,8 +115,6 @@ const LogIn = () => {
                   <FaGoogle></FaGoogle>
                 </button>
               </div>
-             
-              <p className="text-red-800">{error}</p>
             </div>
           </div>
         </div>

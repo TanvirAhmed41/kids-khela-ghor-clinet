@@ -1,6 +1,6 @@
 const ShopByAge = () => {
   return (
-    <div className=" bg-green-800">
+    <div className=" bg-blue-800">
       <div className="p-10">
         <h1 className="text-center font-bold mb-3 text-5xl">
           <span className="lg:mr-5">S H O P </span>
