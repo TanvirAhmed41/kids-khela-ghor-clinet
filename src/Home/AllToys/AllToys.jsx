@@ -8,13 +8,13 @@ const AllToys = () => {
   console.log(animalToys);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allToys")
+    fetch("https://kids-khelaghor-server.vercel.app/allToys")
       .then((res) => res.json())
       .then((data) => setAnimalToys(data));
   }, []);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/toySearchByName/${searchAnimal}`)
+    fetch(`https://kids-khelaghor-server.vercel.app/toySearchByName/${searchAnimal}`)
       .then((res) => res.json())
       .then((data) => {
         setAnimalToys(data);

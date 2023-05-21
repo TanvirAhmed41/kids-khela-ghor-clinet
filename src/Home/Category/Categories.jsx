@@ -9,7 +9,7 @@ const Categories = () => {
     const [category,setCategory] = useState("WildToys")
 
     useEffect(() => {
-        fetch(`http://localhost:5000/categories?category=${category}`)
+        fetch(`https://kids-khelaghor-server.vercel.app/categories?category=${category}`)
           .then((res) => res.json())
           .then((data) => setData(data));
       }, [category]);

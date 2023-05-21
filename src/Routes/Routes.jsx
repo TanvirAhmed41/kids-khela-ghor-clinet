@@ -25,7 +25,7 @@ const router = createBrowserRouter([
         {
             path:'alltoys',
             element:<AllToys></AllToys>,
-            loader:()=>fetch('http://localhost:5000/allToys')
+            loader:()=>fetch('https://kids-khelaghor-server.vercel.app/allToys')
         },
         {
             path:'mytoys',
@@ -48,12 +48,12 @@ const router = createBrowserRouter([
         {
           path: '/toys/:id',
           element:<PrivateRoute><Update></Update></PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+          loader:({params})=>fetch(`https://kids-khelaghor-server.vercel.app/toys/${params.id}`)
         },
         {
           path: '/viewdetails/:id',
           element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+          loader:({params})=>fetch(`https://kids-khelaghor-server.vercel.app/toys/${params.id}`)
         },
         {
           path: 'blog',
