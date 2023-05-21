@@ -8,6 +8,7 @@ import ErrorPage from "../Shared/ErrorPage";
 import Blog from "../Shared/Blog";
 import MyToys from "../Home/MyToys/MyToys";
 import AddAToy from "../Home/AddAToy/AddAToy";
+import Update from "../Home/Update/Update";
 
 const router = createBrowserRouter([
     {
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
         {
           path: 'signup',
           element:<Registration></Registration>
+        },
+        {
+          path: '/toys/:id',
+          element:<Update></Update>,
+          loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
         },
         {
           path: 'blog',

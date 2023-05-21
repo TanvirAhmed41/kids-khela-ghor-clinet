@@ -39,7 +39,6 @@ const MyToys = () => {
             <table className="table table-compact w-full ">
           <thead >
             <tr>
-              <th className="p-5 text-center">No</th>
               <th>Name</th>
               <th>Seller </th>
               <th>Sub Category</th>

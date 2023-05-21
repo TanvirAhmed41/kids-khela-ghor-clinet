@@ -1,19 +1,25 @@
+import { Link } from "react-router-dom";
+
 const SingleMyToys = ({ toy, handleDelete }) => {
   const {
     name,
-    rating,
-    pictureURL,
-    description,
     price,
-    sellerEmail,
     sellerName,
     subCategory,
     _id,
   } = toy;
   return (
     <tr>
-      <th className="text-center ps-5">
-        <label>
+      <th>{name}</th> 
+      <th>{sellerName}</th>
+      <th>{subCategory}</th>
+      <th>{price}</th>
+     <div  className="flex justify-center items-center w-1/2">
+     <th>
+        <Link to={`/toys/${_id}`}><button className="btn btn-success w-22">Edit</button></Link>
+      </th>
+      <th>
+      <label>
           <button
             onClick={() => handleDelete(_id)}
             className="btn btn-circle btn-outline hover:bg-green-200]"
@@ -34,17 +40,6 @@ const SingleMyToys = ({ toy, handleDelete }) => {
             </svg>
           </button>
         </label>
-      </th>
-      <th>{name}</th> 
-      <th>{sellerName}</th>
-      <th>{subCategory}</th>
-      <th>{price}</th>
-     <div  className="flex justify-center items-center w-1/2">
-     <th>
-        <button className="btn btn-success w-22">Edit</button>
-      </th>
-      <th>
-        <button className="btn btn-success w-22">View Details</button>
       </th>
      </div>
     </tr>
